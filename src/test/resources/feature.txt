@@ -1,0 +1,12 @@
+Scenario Crear una nueva tarea
+Given se envía un objeto Json con los campos título y descripción no vacíos
+When se hace por petición HTTP POST al endpoint /tasks
+Then el sistema devuelve un objeto JSON con el ID, título y descripción de la tarea
+And el campo completed en false
+And estado de petición 201
+
+Scenario Crear una nueva tarea
+Given se envía un objeto Json con los campos título y descripción vacíos
+When se hace por petición HTTP POST al endpoint /tasks
+Then el sistema devuelve un objeto JSON con mensaje de error
+And estado de petición 400
